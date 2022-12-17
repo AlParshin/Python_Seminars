@@ -6,6 +6,10 @@
 print('Введите длину списка:')
 N = int(input())
 out_list = {}
+sum = 0
 for i in range(1, N+1):
     out_list[i] = round((1+1/i) ** i, 2)
+    sum = sum + out_list[i]
+print('Полученный нами список:')
 print(out_list)
+print('Сумма всех элементов нашего списка равна: ', sum)
