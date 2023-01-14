@@ -1,8 +1,9 @@
 # Напишите программу, удаляющую из текста все слова, содержащие буквы "а" "б" или "в".
 
 
-with open('HomeTask1.txt', 'r', encoding='utf-8') as file:
+with open('HomeTask1_start.txt', 'r', encoding='utf-8') as file:
     statya = file.read()
+    file.close()
 statya.replace('\n', '')
 statya = list(statya.split())
 print('Исходный текст (списком элементов):')
@@ -16,3 +17,10 @@ for i in statya:
 print('----------------------------------------------------------------------------------------------------------------------------------------------')
 print('Конечный текст:')
 print(" ".join(map(str, final)))
+
+finish = list(map(str, final))
+
+with open('HomeTask1_finish.txt', 'w', encoding='utf-8') as file:
+    for i in finish:
+        file.write(i + '\n')
+    file.close()
